@@ -3,6 +3,7 @@ pipeline {
 
 	environment {
 		mavenHome = tool 'jenkins-maven'
+		PATH = '$PATH:/opt/apache-maven-3.9.2/bin/'
 	}
 
 	tools {

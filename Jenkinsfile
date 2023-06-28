@@ -1,5 +1,8 @@
 pipeline {
-	agent java-1.8
+
+	agent {
+            label 'java-1.8'
+    }
 
 	stages {
 

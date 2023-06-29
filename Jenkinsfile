@@ -4,6 +4,7 @@ pipeline {
             label 'java-1.8'
     }
 
+
 	stages {
 
 		stage('Build'){
@@ -24,4 +25,5 @@ pipeline {
 			}
 		}
 	}
+
 }

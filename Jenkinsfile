@@ -3,6 +3,10 @@ pipeline {
         label "java:17"
     }
 
+    triggers {
+        pollSCM('* * * * *')
+    }
+
     stages {
         stage("Compile") {
             steps {

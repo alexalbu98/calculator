@@ -28,6 +28,11 @@ pipeline {
                     reportFiles: 'index.html',
                     reportName: "JaCoCo Report"
                 ])
+                publishHTML (target: [
+                    reportDir: 'target/site/',
+                    reportFiles: 'checkstyle.html',
+                    reportName: "Checkstyle Report"
+                ])
             }
         }
     }

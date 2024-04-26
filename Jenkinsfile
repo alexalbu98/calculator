@@ -23,16 +23,17 @@ pipeline {
         stage("Verify Code") {
             steps {
                 sh "./mvnw verify"
-
                 publishHTML (target: [
                     reportDir: 'target/site/jacoco/',
                     reportFiles: 'index.html',
                     reportName: "JaCoCo Report"
                 ])
 
+                sh "./mvnw checkstyle:check"
+                sh "./mvnw site"
                 publishHTML (target: [
                     reportDir: 'target/site',
-                    reportFiles: 'checkstyle.html',
+                    reportFiles: 'index.html',
                     reportName: "Checkstyle Report"
                 ])
             }

@@ -38,6 +38,23 @@ pipeline {
                 ])
             }
         }
-    }
 
+        stage('Deliver for development') {
+                    when {
+                        branch 'dev'
+                    }
+                    steps {
+                        echo "Deploying for development."
+                    }
+        }
+
+        stage('Deploy for master') {
+            when {
+                branch 'master'
+            }
+            steps {
+                echo "Deploying for master."
+            }
+        }
+    }
 }
